@@ -14,8 +14,8 @@ function MoviesCard(props) {
             </a>
             <div className="cards__description">
                 <h2 className="cards__name">{props.card.name}</h2>
-                {isMoviesPage && <button className="cards__like_type_like " type="button" aria-label="Избранное" />}
-                {!isMoviesPage && <button className="cards__like_type_delete " type="button" aria-label="Избранное" />}
+                {isMoviesPage && <button className="cards__like cards__like_type_like" type="button" aria-label="Избранное" />}
+                {!isMoviesPage && <button className="cards__like cards__like_type_delete " type="button" aria-label="Избранное" />}
             </div>
             <p className="cards__duration">1ч42м</p>
         </li>

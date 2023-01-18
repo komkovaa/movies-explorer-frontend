@@ -25,26 +25,28 @@
 }
 
 .cards__like {
-    display: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    background: transparent;
 }
 
 .cards__like_type_like {
     background-image: url('../../../images/save1.svg');
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 24px;
-    max-height: 24px;
-    border: none;
+}
+
+.cards__like_type_inactive {
+    background-image: url('../../../images/save1inactive.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cards__like_type_delete {
     background-image: url('../../../images/like-delete.svg');
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 9px;
-    max-height: 9px;
-    border: none;
-    background-color: #fff;
 }
 
 .cards__duration {
