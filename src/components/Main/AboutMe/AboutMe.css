@@ -130,6 +130,8 @@
         order: -1;
         margin: 0  auto;
         margin-top: 60px;
+        width: 292px;
+        height: 352px;
     }
 
     .about-me__column {
@@ -161,5 +163,5 @@
     .about-me__text {
         font-size: 11px;
         line-height: 16px;
-    }    
+    }  
 }
