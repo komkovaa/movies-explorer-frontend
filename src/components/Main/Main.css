@@ -1,0 +1,56 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.title {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26.63px;
+  margin: 0;
+  padding-bottom: 23px;
+}
+
+.two-columns {
+  display: flex;
+  padding-top: 70px;
+  gap: 30px;
+}
+
+.two-columns__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 620px) {
+  .two-columns {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+    gap: 0px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+  }
+
+  .two-columns {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+  }
+
+}
