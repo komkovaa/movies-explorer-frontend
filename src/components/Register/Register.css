@@ -37,6 +37,8 @@
     border: none;
     margin-top: 10px;
     box-sizing: border-box;
+    background: #F9F9F9;
+    border-radius: 8px;
 }
 
 .register__input:last-of-type {
@@ -86,7 +88,8 @@
 @media screen and (max-width: 768px) {
     .logo-register {
         margin-top: 232px;
-    } 
+    }
+
     .register__signin {
         margin-bottom: 232px;
     }
@@ -96,21 +99,25 @@
     .main-register {
         max-width: 260px;
     }
+
     .logo-register {
         margin: 56px auto 0;
 
-    } 
+    }
+
     .register__title {
         padding-top: 50px;
         padding-bottom: 60px;
         text-align: center;
     }
+
     .register__button {
         width: 260px;
         font-size: 12px;
         line-height: 15px;
         margin: 157px auto 14px;
     }
+
     .register__signin {
         margin-bottom: 30px;
     }

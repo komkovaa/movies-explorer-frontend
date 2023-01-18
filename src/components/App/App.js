@@ -14,7 +14,7 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [cards, setCards] = useState([
   {
     name: '33 слова о дизайне',

@@ -35,6 +35,8 @@
     border: none;
     margin-top: 10px;
     box-sizing: border-box;
+    background: #F9F9F9;
+    border-radius: 8px;
 }
 
 .login__button {
@@ -69,7 +71,8 @@
 @media screen and (max-width: 768px) {
     .logo-login {
         margin-top: 232px;
-    } 
+    }
+
     .login__signup {
         margin-bottom: 232px;
     }
@@ -79,24 +82,29 @@
     .main-login {
         max-width: 260px;
     }
+
     .logo-login {
         margin: 56px auto 0;
 
-    } 
+    }
+
     .login__title {
         padding-top: 50px;
         padding-bottom: 60px;
         text-align: center;
     }
+
     .login__button {
         width: 260px;
         font-size: 12px;
         line-height: 15px;
         margin: 157px auto 14px;
     }
+
     .login__signup {
         margin-bottom: 30px;
     }
+
     .login__signup {
         font-size: 12px;
         line-height: 15px;
