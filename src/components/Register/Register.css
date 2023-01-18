@@ -103,6 +103,7 @@
     .register__title {
         padding-top: 50px;
         padding-bottom: 60px;
+        text-align: center;
     }
     .register__button {
         width: 260px;
