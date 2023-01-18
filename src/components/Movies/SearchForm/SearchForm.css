@@ -60,6 +60,7 @@
     background-image: url('../../../images/loupe.svg');
     background-repeat: no-repeat;
     background-position: center;
+    border: none;
 }
 
 .checkbox {
