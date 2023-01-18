@@ -16,7 +16,7 @@ function SearchForm() {
                         maxLength="30"
                         required>
                     </input>
-                    <button className="search-form__button" type="submit" aria-label="Найти"></button>
+                    <button className="animation button search-form__button" type="submit" aria-label="Найти"></button>
                 </fieldset>
                 <fieldset className="search-form__fieldset search-form__fieldset_type_tumb">
                     <input className='checkbox' type='checkbox'></input>
