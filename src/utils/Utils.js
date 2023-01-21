@@ -1,5 +1,5 @@
 const apiConfig = {
-    baseUrl: 'https://api.nomoreparties.co/beatfilm-movies',
+    baseUrl: 'https://api.nomoreparties.co',
     headers:
     {
         'Authorization': '',

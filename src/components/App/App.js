@@ -13,32 +13,8 @@ import Profile from '../Profile/Profile';
 import PageNotFound from '../PageNotFound/PageNotFound';
 
 
-function App() {
+function App(props) {
   const [loggedIn, setLoggedIn] = useState(true);
-  const [cards, setCards] = useState([
-  {
-    name: '33 слова о дизайне',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-    duration: 30
-  },
-  {
-    name: 'Киноальманах «100 лет дизайна»',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-    duration: 45
-  },
-  {
-    name: 'В погоне за Бенкси',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-    duration: 35
-  },
-  {
-    name: 'Баския: Взрыв реальности',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-    duration: 37
-  }
-  ]);
-
-
 
   return (
     <div className="page">
@@ -46,8 +22,8 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={<Main />} />
-        <Route path='/movies' element={<Movies cards={cards}/>} />
-        <Route path='/saved-movies' element={<SavedMovies cards={cards}/>} />
+        <Route path='/movies' element={<Movies cards={props.cards}/>} />
+        <Route path='/saved-movies' element={<SavedMovies cards={props.cards}/>} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/signup' element={<Register />} />

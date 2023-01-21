@@ -7,8 +7,8 @@ function MoviesCardList(props) {
     return (
         <section className="cards">
             <ul className="cards__list">
-                {props.cards.map((card, index) => {
-                    return (<MoviesCard key={index} card={card}/>)
+                {props.cards.map((card, cardId) => {
+                    return (<MoviesCard key={cardId} card={card}/>)
                 })}
             </ul>
             <button className="button button_bg_white cards__button" type="button">Ещё</button>
