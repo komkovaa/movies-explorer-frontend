@@ -2,7 +2,7 @@ import apiConfig from "./Utils";
 
 class MainApi {
     constructor(apiConfig) {
-        this._baseUrl = apiConfig.baseUrl;
+        this._mainBaseUrl = apiConfig.mainBaseUrl;
         this._headers = apiConfig.headers;
     }
 
@@ -12,4 +12,9 @@ class MainApi {
         }
         return Promise.reject(`Ошибка: ${res.status}`);
     }
+
+
 }
+
+const mainApi= new MainApi(apiConfig);
+export default mainApi;
