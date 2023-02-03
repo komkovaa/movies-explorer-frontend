@@ -22,9 +22,14 @@
   cursor: pointer;
 }
 
+.button:hover {
+  opacity: .7;
+}
+
 .button:disabled {
   cursor: default;
   color: #C2C2C2;
+  opacity: .7;
 }
 
 .button_bg_white {
@@ -35,10 +40,6 @@
 .button_bg_black {
   background-color: #000;
   color: #fff;
-}
-
-.button_bg_black:hover {
-  opacity: .8;
 }
 
 .animation {
