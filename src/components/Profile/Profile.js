@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import '../App/App.css';
 import './Profile.css';
@@ -16,6 +16,7 @@ function Profile(props) {
     const [isValid, setIsValid] = useState(true);
     const [apiError, setApiError] = useState('');
     const [disabled, setDisabled] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setFormValue((state) => ({
@@ -49,6 +50,12 @@ function Profile(props) {
         e.preventDefault();
         const { name, email } = formValue;
         props.onUpdateUser(name, email, setApiError(error.message))
+    }
+
+    function handleLogout() {
+        localStorage.removeItem('jwt');
+        props.setLoggedIn(false);
+        navigate('/');
     }
 
     return (
@@ -90,7 +97,7 @@ function Profile(props) {
                     onClick={handleSubmit}
                     disabled={disabled}
                 >Редактировать</button>
-                <Link className="button profile__button profile__button_type_link" to='/signin' onClick={props.onLogout}>Выйти из аккаунта</Link>
+                <button className="button profile__button profile__button_type_link" onClick={handleLogout}>Выйти из аккаунта</button>
                 <button className="button button_bg_black profile__button profile__button_type_save" type='submit'>Сохранить</button>
             </form>
         </main>
