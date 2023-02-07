@@ -75,6 +75,7 @@ function handleSubmit(e) {
                     id='email'
                     name='email'
                     type="email"
+                    pattern=".+@.+\..+"
                     value={formValue.email}
                     onChange={handleChange}
                     minLength="2"

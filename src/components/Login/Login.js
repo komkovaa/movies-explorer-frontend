@@ -58,6 +58,7 @@ function Login(props) {
                 <input
                     className="login__input"
                     type="email"
+                    pattern=".+@.+\..+"
                     id='email'
                     name='email'
                     value={formValue.email}
