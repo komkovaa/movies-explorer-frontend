@@ -25,10 +25,8 @@ function MoviesCardList(props) {
             </ul>
             {props.isShowPreloader && <Preloader/>}
             {!props.isShowPreloader && props.cards.length === 0 && (<span className="register__error">По вашему запросу ничего не найдено</span>)}
-            {props.hasCards ?
-            <button className="button button_bg_white cards__button" type="button" onClick={props.loadCards}>Ещё</button>
-           :
-            <button className="button button_bg_white cards__button" type="button" disabled={disabled} onClick={props.loadCards}>Ещё</button>}
+            {props.hasCards && (<button className="button button_bg_white cards__button" type="button" onClick={props.loadCards}>Ещё</button>)
+        }
         </section>
     )
 }
