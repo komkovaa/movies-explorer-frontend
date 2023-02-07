@@ -109,7 +109,7 @@ function App() {
   function handleRegister(name, email, password) {
     return mainApi.register(name, email, password)
       .then(() => {
-        navigate('/movies');
+        handleLogin(email, password);
       })
       .catch(err => (err.message));
   }
