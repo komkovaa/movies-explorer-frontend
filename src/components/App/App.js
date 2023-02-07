@@ -235,13 +235,21 @@ function App() {
         <Header loggedIn={loggedIn} email={currentUser.email} />
         <Routes>
           <Route exact path='/' element={<Main />} />
-          <Route path='/signup' element={<Register onRegister={handleRegister} />} />
-          <Route path='/signin' element={<Login onLogin={handleLogin} />} />
+          <Route path='/signup' element={
+            <ProtectedRoute loggedIn={!loggedIn}>
+              <Register onRegister={handleRegister} />
+            </ProtectedRoute>}
+          />
+          <Route path='/signin' element={
+            <ProtectedRoute loggedIn={!loggedIn}>
+              <Login onLogin={handleLogin} />
+            </ProtectedRoute>}
+          />
           <Route path='/profile' element={
             <ProtectedRoute loggedIn={loggedIn}>
               <Profile onUpdateUser={handleUpdateUserInfo} onLogout={handleLogout} />
-            </ProtectedRoute>
-          } />
+            </ProtectedRoute>}
+          />
           <Route path='/movies' element={
             <ProtectedRoute loggedIn={loggedIn}>
               <Movies
@@ -255,8 +263,8 @@ function App() {
                 savedMoviesById={savedMoviesById}
                 onCardLike={handleCardLike}
               />
-            </ProtectedRoute>
-          } />
+            </ProtectedRoute>}
+          />
           <Route path='/saved-movies' element={
             <ProtectedRoute loggedIn={loggedIn}>
               <SavedMovies
@@ -267,8 +275,8 @@ function App() {
                 isShowPreloader={isShowPreloader}
                 onCardLike={handleCardLike}
               />
-            </ProtectedRoute>
-          } />
+            </ProtectedRoute>}
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
