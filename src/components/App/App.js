@@ -45,7 +45,7 @@ function App() {
   ), [savedMovies]);
 
   const [isMoviesApiError, setIsMoviesApiError] = useState(false); // Ошибки АПИ после поиска фильма.
-  
+
   const [isShowPreloader, setIsShowPreloader] = useState(false);
 
   const navigate = useNavigate();
@@ -125,6 +125,20 @@ function App() {
       .catch(err => (err.message));
   }
 
+  function handleLogout() {
+    localStorage.clear();
+    setCurrentUser({
+      name: '',
+      email: ''
+    })
+    setLoggedIn(false);
+    setCards([]);
+    setSavedMovies([]);
+    setFilteredCards([]);
+    setFilteredSavedMovies([]);
+    navigate('/');
+  }
+
   function handleUpdateUserInfo(name, email) {
     mainApi.updateUserInfo(name, email)
       .then((user) => {
@@ -175,7 +189,7 @@ function App() {
       mainApi.getMovies()
         .then((res) => {
           if (res && res.data) {
-             localStorage.setItem('savedMovies', JSON.stringify(res.data));
+            localStorage.setItem('savedMovies', JSON.stringify(res.data));
           } else {
             localStorage.removeItem('savedMovies');
           }
@@ -225,7 +239,7 @@ function App() {
           <Route path='/signin' element={<Login onLogin={handleLogin} />} />
           <Route path='/profile' element={
             <ProtectedRoute loggedIn={loggedIn}>
-              <Profile onUpdateUser={handleUpdateUserInfo} />
+              <Profile onUpdateUser={handleUpdateUserInfo} onLogout={handleLogout} />
             </ProtectedRoute>
           } />
           <Route path='/movies' element={
@@ -246,13 +260,13 @@ function App() {
           <Route path='/saved-movies' element={
             <ProtectedRoute loggedIn={loggedIn}>
               <SavedMovies
-                  onSearchSavedFilm={handleSearchSavedFilm}
-                  cards={filteredSavedMovies}
-                  savedMovies={savedMovies}
-                  savedMoviesById={savedMoviesById}
-                  isShowPreloader={isShowPreloader}
-                  onCardLike={handleCardLike}
-                />
+                onSearchSavedFilm={handleSearchSavedFilm}
+                cards={filteredSavedMovies}
+                savedMovies={savedMovies}
+                savedMoviesById={savedMoviesById}
+                isShowPreloader={isShowPreloader}
+                onCardLike={handleCardLike}
+              />
             </ProtectedRoute>
           } />
           <Route path="*" element={<PageNotFound />} />

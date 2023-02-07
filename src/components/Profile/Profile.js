@@ -52,12 +52,6 @@ function Profile(props) {
         props.onUpdateUser(name, email, setApiError(error.message))
     }
 
-    function handleLogout() {
-        localStorage.removeItem('jwt');
-        props.setLoggedIn(false);
-        navigate('/');
-    }
-
     return (
         <main className="main-profile">
             <form className="profile" noValidate>
@@ -97,7 +91,7 @@ function Profile(props) {
                     onClick={handleSubmit}
                     disabled={disabled}
                 >Редактировать</button>
-                <button className="button profile__button profile__button_type_link" onClick={handleLogout}>Выйти из аккаунта</button>
+                <button className="button profile__button profile__button_type_link" onClick={props.onLogout}>Выйти из аккаунта</button>
                 <button className="button button_bg_black profile__button profile__button_type_save" type='submit'>Сохранить</button>
             </form>
         </main>
