@@ -8,11 +8,11 @@ function Profile(props) {
     const currentUser = useContext(CurrentUserContext);
 
     const [formValue, setFormValue] = useState({
-        name: '',
-        email: ''
+        name: "",
+        email: ""
     })
     const [error, setError] = useState({});
-    const [isValid, setIsValid] = useState(true);
+    const [isValid, setIsValid] = useState(false);
     const [apiError, setApiError] = useState('');
     const [disabled, setDisabled] = useState(true);
 
@@ -25,6 +25,13 @@ function Profile(props) {
         );
     }, [currentUser.name, currentUser.email]);
 
+    React.useEffect(() => {
+        if(!isValid || (formValue.name === currentUser.name && formValue.email === currentUser.email)) {
+            setDisabled(true);
+        } else {
+            setDisabled(false);
+        }
+    }, [currentUser.name, currentUser.email, formValue.name, formValue.email, isValid]);
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -35,9 +42,7 @@ function Profile(props) {
             ...error, [name]: e.target.validationMessage
         });
         setIsValid(e.target.checkValidity());
-        console.log(formValue.name)
-        console.log(currentUser.name)
-        if (!isValid || (formValue.name === currentUser.name) || (formValue.email === currentUser.email)) {
+        if (isValid || ((formValue.name === currentUser.name) && (formValue.email === currentUser.email))) {
             setDisabled(false)
         } else {
             setDisabled(true)
