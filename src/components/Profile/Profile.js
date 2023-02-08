@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import '../App/App.css';
 import './Profile.css';
@@ -16,7 +15,6 @@ function Profile(props) {
     const [isValid, setIsValid] = useState(true);
     const [apiError, setApiError] = useState('');
     const [disabled, setDisabled] = useState(true);
-    const navigate = useNavigate();
 
     useEffect(() => {
         setFormValue((state) => ({
@@ -39,7 +37,7 @@ function Profile(props) {
         setIsValid(e.target.checkValidity());
         console.log(formValue.name)
         console.log(currentUser.name)
-        if (!isValid || (formValue.name !== currentUser.name) || (formValue.email !== currentUser.email)) {
+        if (!isValid || (formValue.name === currentUser.name) || (formValue.email === currentUser.email)) {
             setDisabled(false)
         } else {
             setDisabled(true)
