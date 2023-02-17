@@ -28,13 +28,19 @@
     font-weight: 500;
     font-size: 11px;
     line-height: 13px;
-    margin-top: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin: 0;
 }
 
 .profile__input {
-    padding: 16px;
+    padding-top: 17px;
+    padding-bottom: 17px;
     border: none;
-    margin-top: 10px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
 }
 
 .profile__button {
