@@ -1,7 +1,6 @@
 # movies-explorer-frontend
 
 
-*[Ссылка на пул реквест](https://github.com/komkovaa/movies-explorer-frontend/pull/15)  
 
 *[ссылка на проект](http://komkova.diploma.nomoredomains.club/)  
 
